@@ -32,10 +32,10 @@
 		init: () => void;
 	}
 
-	let query = $state('');
-	let results = $state<PagefindResult[]>([]);
+	let query = '';
+	let results: PagefindResult[] = [];
 	let pagefind: Pagefind | null = null;
-	let isSearching = $state(false);
+	let isSearching = false;
 
 	onMount(async () => {
 		if (import.meta.env.DEV) {
@@ -44,7 +44,8 @@
 		}
 
 		try {
-			const importPath = '/pagefind/pagefind.js';
+			const base = import.meta.env.BASE_URL ?? '/';
+			const importPath = `${base}pagefind/pagefind.js`;
 			const module = await import(importPath /* @vite-ignore */);
 			pagefind = module as Pagefind;
 			pagefind.init();

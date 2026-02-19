@@ -23,6 +23,7 @@ describe('Pagefind Search Integration', () => {
 		
 		const content = fs.readFileSync(searchPath, 'utf-8');
 		expect(content).toContain('aria-label');
+		expect(content).toContain('BASE_URL');
 		expect(content).toContain('<style>');
 	});
 
