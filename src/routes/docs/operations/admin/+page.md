@@ -1,3 +1,7 @@
+---
+title: "Admin"
+---
+
 # Namespace: `admin` — System Administration
 
 ## `afs admin health`

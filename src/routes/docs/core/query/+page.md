@@ -1,3 +1,7 @@
+---
+title: "Query"
+---
+
 # Namespace: `query` — Search & Retrieval
 
 ## `afs query search`

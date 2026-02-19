@@ -1,3 +1,7 @@
+---
+title: "Attachment"
+---
+
 # Namespace: `attachment` — Attachments
 
 ## `afs attachment upload`

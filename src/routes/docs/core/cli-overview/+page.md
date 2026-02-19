@@ -1,3 +1,7 @@
+---
+title: "CLI Guide Overview"
+---
+
 # AFS CLI Guide — Overview
 
 This guide is split into one file per namespace/section. All commands emit JSON to stdout (errors to stderr) unless noted.

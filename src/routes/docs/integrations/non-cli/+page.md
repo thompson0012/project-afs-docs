@@ -1,3 +1,7 @@
+---
+title: "Non-CLI APIs"
+---
+
 # Non-CLI Functionality
 
 ## HTTP API (`afs-server`)

@@ -1,3 +1,7 @@
+---
+title: "Agent"
+---
+
 # Namespace: `agent` — Agent Management
 
 ## `afs agent create`
