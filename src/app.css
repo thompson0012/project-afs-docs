@@ -9,6 +9,8 @@
 	--border: #e2e8f0;
 	--accent: #6366f1;
 	--accent-strong: #4f46e5;
+	--accent-orange: #f97316;
+	--accent-orange-opaque: rgba(249, 115, 22, 0.12);
 	--focus: rgba(99, 102, 241, 0.35);
 	--code-bg: #0f172a;
 	--code-text: #e2e8f0;

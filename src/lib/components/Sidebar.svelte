@@ -3,24 +3,31 @@
 	import { contentMap } from '$lib/content-map';
 	import { groupContentBySection } from '$lib/content-sections';
 
-	let currentPath = $derived($page.url.pathname);
-	let sections = $derived(groupContentBySection(contentMap));
+	let currentPath = '';
+	let sections = groupContentBySection(contentMap);
+
+	$: currentPath = $page.url.pathname;
+	$: sections = groupContentBySection(contentMap);
 
 	function isActive(slug: string, path: string) {
 		return path === `/docs/${slug}` || (slug === 'introduction' && path === '/docs');
+	}
+
+	function isSectionActive(group: { items: { slug: string }[] }) {
+		return group.items.some((entry) => isActive(entry.slug, currentPath));
 	}
 </script>
 
 <aside class="sidebar">
 	<nav aria-label="Documentation sidebar">
 		{#each sections as group}
-			<div class="section">
-				<h2 class="section-title">{group.section}</h2>
+			<div class="section" class:section-active={isSectionActive(group)}>
+				<h2 class="section-title" class:section-active={isSectionActive(group)}>{group.section}</h2>
 				<ul class="nav-list">
 					{#each group.items as entry}
 						<li>
-							<a
-								href="/docs/{entry.slug}"
+						<a
+							href={`/docs/${entry.slug}`}
 								class:active={isActive(entry.slug, currentPath)}
 								aria-current={isActive(entry.slug, currentPath) ? 'page' : undefined}
 							>
@@ -84,9 +91,13 @@
 	}
 
 	a.active {
-		background-color: rgba(99, 102, 241, 0.12);
-		color: var(--accent-strong);
+		background-color: var(--accent-orange-opaque);
+		color: var(--accent-orange);
 		font-weight: 500;
+	}
+
+	.section-title.section-active {
+		color: var(--accent-orange);
 	}
 
 	a:focus-visible {
