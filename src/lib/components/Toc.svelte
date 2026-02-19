@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { collectHeadings, type TocHeading } from '$lib/toc';
 
@@ -6,7 +7,8 @@
 	let activeId = $state('');
 	let observer: IntersectionObserver | null = null;
 
-	onMount(() => {
+	function setupObserver() {
+		observer?.disconnect();
 		const root = document.querySelector('main');
 		if (!root) return;
 
@@ -32,8 +34,16 @@
 			const element = document.getElementById(heading.id);
 			if (element) observer?.observe(element);
 		});
+	}
 
+	onMount(() => {
+		setupObserver();
 		return () => observer?.disconnect();
+	});
+
+	$effect(() => {
+		$page.url.pathname;
+		setupObserver();
 	});
 </script>
 
