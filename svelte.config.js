@@ -1,4 +1,5 @@
-import adapter from '@sveltejs/adapter-static';
+
+import adapter from '@sveltejs/adapter-cloudflare'
 import { mdsvex } from 'mdsvex';
 
 const config = {
