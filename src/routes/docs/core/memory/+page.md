@@ -1,3 +1,7 @@
+---
+title: "Memory"
+---
+
 # Namespace: `memory` — Memory Lifecycle
 
 ## `afs memory create`

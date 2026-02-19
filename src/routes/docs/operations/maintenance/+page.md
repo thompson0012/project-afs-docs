@@ -1,3 +1,7 @@
+---
+title: "Maintenance"
+---
+
 # Namespace: `maintenance` — Maintenance Operations
 
 ## `afs maintenance tick`

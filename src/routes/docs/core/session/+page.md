@@ -1,3 +1,7 @@
+---
+title: "Session"
+---
+
 # Namespace: `session` — Session Management
 
 ## `afs session create`

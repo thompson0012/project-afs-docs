@@ -1,3 +1,7 @@
+---
+title: "Graph"
+---
+
 # Namespace: `graph` — Graph Operations
 
 ## `afs graph neighborhood`

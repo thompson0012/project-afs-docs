@@ -1,3 +1,7 @@
+---
+title: "Scheduler"
+---
+
 # Namespace: `scheduler` — Background Scheduler
 
 ## `afs scheduler start`

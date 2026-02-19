@@ -10,7 +10,7 @@
 				{@render children?.()}
 			</div>
 			<div class="links">
-				<a href="https://github.com/labs21/project-afs" target="_blank" rel="noopener noreferrer">GitHub</a>
+				<a href="https://github.com/thompson0012/project-afs/" target="_blank" rel="noopener noreferrer">GitHub</a>
 			</div>
 		</div>
 	</div>
@@ -18,8 +18,8 @@
 
 <style>
 	.top-nav {
-		background: #ffffff;
-		border-bottom: 1px solid #e5e7eb;
+		background: var(--bg);
+		border-bottom: 1px solid var(--border);
 		height: 4rem;
 		display: flex;
 		align-items: center;
@@ -41,7 +41,7 @@
 	.brand {
 		font-weight: 700;
 		font-size: 1.25rem;
-		color: #111827;
+		color: var(--text);
 		text-decoration: none;
 	}
 
@@ -57,7 +57,7 @@
 	}
 
 	.links a {
-		color: #4b5563;
+		color: var(--text-muted);
 		text-decoration: none;
 		font-size: 0.875rem;
 		padding: 0.5rem;
@@ -66,12 +66,12 @@
 	}
 
 	.links a:hover {
-		color: #111827;
-		background-color: #f3f4f6;
+		color: var(--text);
+		background-color: var(--bg-subtle);
 	}
 
 	a:focus-visible {
-		outline: 2px solid #2563eb;
+		outline: 2px solid var(--accent);
 		outline-offset: 2px;
 	}
 </style>

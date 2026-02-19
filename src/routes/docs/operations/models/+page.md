@@ -1,3 +1,7 @@
+---
+title: "Models"
+---
+
 # Namespace: `models` — Local Model Management
 
 ## `afs models install`
