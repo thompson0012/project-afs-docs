@@ -14,7 +14,7 @@ describe('Pagefind Search Integration', () => {
 	it('should run pagefind after build in package.json', () => {
 		const pkgPath = path.join(projectRoot, 'package.json');
 		const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'));
-		expect(pkg.scripts.build).toContain('pagefind --site build');
+		expect(pkg.scripts.build).toContain('pagefind --site .svelte-kit/cloudflare');
 	});
 
 	it('should implement the Search component with accessibility attributes', () => {
@@ -23,7 +23,8 @@ describe('Pagefind Search Integration', () => {
 		
 		const content = fs.readFileSync(searchPath, 'utf-8');
 		expect(content).toContain('aria-label');
-		expect(content).toContain('BASE_URL');
+		expect(content).toContain('$app/paths');
+		expect(content).toContain('pagefind/pagefind.js');
 		expect(content).toContain('<style>');
 	});
 

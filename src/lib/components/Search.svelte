@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+ import { base } from '$app/paths';
+ import { onMount } from 'svelte';
 
 	interface PagefindResult {
 		id: string;
@@ -44,9 +45,8 @@
 		}
 
 		try {
-			const base = import.meta.env.BASE_URL ?? '/';
-			const importPath = `${base}pagefind/pagefind.js`;
-			const module = await import(importPath /* @vite-ignore */);
+			const importPath = `${base}/pagefind/pagefind.js`;
+			const module = await import(/* @vite-ignore */ importPath);
 			pagefind = module as Pagefind;
 			pagefind.init();
 		} catch (e) {
